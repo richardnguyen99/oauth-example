@@ -5,6 +5,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppProvider from "./provider";
 import UserInitializer from "./components/user-initializer";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +29,17 @@ type Props = Readonly<{
 
 export default function RootLayout({ children }: Props): JSX.Element {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppProvider>
           <UserInitializer />
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </AppProvider>
       </body>
     </html>
