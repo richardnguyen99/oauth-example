@@ -62,7 +62,7 @@ export default function Header() {
             FAQ
           </Link>
           <div className="ml-4 flex items-center space-x-2">
-            <Link href="/signup">
+            <Link href="/login">
               <Button size="sm">Login</Button>
             </Link>
           </div>
