@@ -35,11 +35,7 @@ export default function RootLayout({ children }: Props): JSX.Element {
       >
         <AppProvider>
           <UserInitializer />
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            {children}
-            <Footer />
-          </div>
+          {children}
         </AppProvider>
       </body>
     </html>
